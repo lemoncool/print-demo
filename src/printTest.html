@@ -1,0 +1,63 @@
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <title>测试print</title>
+</head>
+<body>
+<form id="form">
+  <table width="630" cellpadding="5" cellspacing="0">
+    <tr>
+      <td>姓名：</td>
+      <td><input type="text" name="username" value="王小明"/></td>
+    </tr>
+    <tr>
+      <td>性 别</td>
+      <td>
+        <input type="radio" name="gender" value="女">女
+        <input type="radio" name="gender" value="男">男
+      </td>
+    </tr>
+    <tr>
+      <td>最高学历</td>
+      <td><select name="degree">
+        <option value="-1">--请选择学历--</option>
+        <option value="博士">博士</option>
+        <option value="硕士">硕士</option>
+        <option value="本科">本科</option>
+        <option value="专科">专科</option>
+        <option value="高中">高中</option>
+        <option value="初中">初中</option>
+        <option value="小学">小学</option>
+      </select></td>
+    </tr>
+    <tr>
+      <td>掌握的语言</td>
+      <td>
+        <input type="checkbox" name="lang" value="中文">中文
+        <input type="checkbox" name="lang" value="英文">英文
+        <input type="checkbox" name="lang" value="法文">法文
+        <input type="checkbox" name="lang" value="日文">日文
+      </td>
+    </tr>
+    <tr>
+      <td>个人简介</td>
+      <td><textarea name="info" rows="2" cols="45"></textarea>
+      </td>
+    </tr>
+    <tr class="noPrint">
+      <td colspan="2" align="center">
+        <button type="button" onclick="toPrint()">打印</button>
+      </td>
+    </tr>
+  </table>
+</form>
+<script src="utils/print2.js"></script>
+<script type="text/javascript">
+  function toPrint() {
+    Print('#form', {
+      noPrint: '.noPrint'
+    });
+  }
+</script>
+</body>
+</html>
